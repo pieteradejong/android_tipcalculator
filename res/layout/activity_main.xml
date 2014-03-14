@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codepath.tipcalculator.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_tip_10pct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etAmount"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="40dp"
+        android:onClick="calculateTip10Pct"
+        android:text="@string/tip_pct_10" />
+
+    <Button
+        android:id="@+id/btn_tip_15pct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_tip_10pct"
+        android:layout_alignBottom="@+id/btn_tip_10pct"
+        android:layout_centerHorizontal="true"
+        android:onClick="calculateTip15Pct"
+        android:text="@string/tip_pct_15" />
+
+    <Button
+        android:id="@+id/btn_tip_20pct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_tip_15pct"
+        android:layout_alignBottom="@+id/btn_tip_15pct"
+        android:layout_marginLeft="19dp"
+        android:layout_toRightOf="@+id/btn_tip_15pct"
+        android:onClick="calculateTip20Pct"
+        android:text="@string/tip_pct_20" />
+
+    <EditText
+        android:id="@+id/etTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_tip_10pct"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="124dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+</RelativeLayout>
