@@ -15,7 +15,7 @@ public class MainActivity extends ActionBarActivity {
 	private double dblBillAmount;
     private EditText etTipAmount;
     private String strTipAmount;
-	
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
