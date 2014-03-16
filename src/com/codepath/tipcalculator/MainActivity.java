@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -39,7 +40,16 @@ public class MainActivity extends ActionBarActivity {
 	public double getBillAmount() {
 		etBillAmount = (EditText) findViewById(R.id.etAmount);
 		strBillAmount = etBillAmount.getText().toString();
-		dblBillAmount = Double.parseDouble(strBillAmount);
+//		if(strBillAmount == null || strBillAmount == "") {
+//			Toast.makeText(getApplicationContext(), "Sorry, you didn't tye an amount.", Toast.LENGTH_SHORT).show();
+//		} else {
+//			dblBillAmount = Double.parseDouble(strBillAmount);
+//		}
+		try {
+		  dblBillAmount = Double.parseDouble(strBillAmount);	
+		} catch(NumberFormatException e) {
+	      Toast.makeText(getApplicationContext(), "Sorry, you didn't type an amount.", Toast.LENGTH_SHORT).show();
+		}
 		return dblBillAmount;
 	}
 	
