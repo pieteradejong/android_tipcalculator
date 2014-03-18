@@ -7,5 +7,7 @@
     <string name="tip_pct_10">10%</string>
     <string name="tip_pct_15">15%</string>
     <string name="tip_pct_20">20%</string>
+    <string name="enter_amount">Amount:</string>
+    <string name="calculated_tip">Tip:</string>
 
 </resources>

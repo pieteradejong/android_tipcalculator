@@ -6,59 +6,77 @@
     tools:context="com.codepath.tipcalculator.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <EditText
-        android:id="@+id/etAmount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:inputType="numberDecimal" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/btn_tip_10pct"
+    <RadioGroup
+        android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/etAmount"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="40dp"
-        android:onClick="calculateTip10Pct"
-        android:text="@string/tip_pct_10" />
-
-    <Button
-        android:id="@+id/btn_tip_15pct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_tip_10pct"
-        android:layout_alignBottom="@+id/btn_tip_10pct"
         android:layout_centerHorizontal="true"
-        android:onClick="calculateTip15Pct"
-        android:text="@string/tip_pct_15" />
+        android:layout_marginTop="34dp"
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/btn_tip_20pct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_tip_15pct"
-        android:layout_alignBottom="@+id/btn_tip_15pct"
-        android:layout_marginLeft="19dp"
-        android:layout_toRightOf="@+id/btn_tip_15pct"
-        android:onClick="calculateTip20Pct"
-        android:text="@string/tip_pct_20" />
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/tip_pct_10"
+            android:onClick="calculateTip10Pct" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_pct_15" 
+            android:onClick="calculateTip15Pct" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_pct_20"
+            android:onClick="calculateTip20Pct" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/etTipAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_tip_10pct"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="124dp"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginTop="59dp"
         android:ems="10"
         android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/etTipAmount"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTipAmount"
+        android:layout_alignBottom="@+id/etTipAmount"
+        android:layout_toLeftOf="@+id/etTipAmount"
+        android:text="@string/calculated_tip"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etAmount"
+        android:layout_alignBottom="@+id/etAmount"
+        android:layout_alignRight="@+id/textView2"
+        android:text="@string/enter_amount"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>

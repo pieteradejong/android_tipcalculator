@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 
 	private EditText etBillAmount;
+	//private EditText etBillAmount = (EditText) findViewById(R.id.etAmount);
 	private String strBillAmount;
 	private double dblBillAmount;
     private EditText etTipAmount;
@@ -20,6 +21,24 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+//		etBillAmount.addTextChangedListener(new TextWatcher() {
+//	    	public void afterTextChanged(Editable s) {
+////	    		dblBillAmount = getBillAmount();
+////	    		setTextfieldToTipAmount(dblBillAmount, pct);
+//	    		return;	
+//	        }
+//
+//	        @Override
+//	        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//	            return;
+//	        }
+//
+//	        @Override
+//	        public void onTextChanged(CharSequence s, int start, int before, int count) {
+//	        	return;
+//	        }
+//		});
 	}
 	
 	public void calculateTip10Pct(View v) {
