@@ -23,29 +23,27 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-//		etBillAmount.addTextChangedListener(new TextWatcher() {
-//	    	public void afterTextChanged(Editable s) {
-//	    		View v = getWindow().getDecorView();
-//	    		switch(pct) {
-//	    		  case 10: calculateTip10Pct(v); 
-//	    		  case 15: calculateTip15Pct(v);
-//	    		  case 20: calculateTip20Pct(v);
-//	    	      default: break;
-//	    		}
-//	    		return;	
-//	        }
-//
-//	        @Override
-//	        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-////	            return;
-//	        }
-//
-//	        @Override
-//	        public void onTextChanged(CharSequence s, int start, int before, int count) {
-////	        	return;
-//	        }
-//		});
+		etBillAmount = (EditText) findViewById(R.id.etAmount);
+		etBillAmount.addTextChangedListener(new TextWatcher() {
+	    	public void afterTextChanged(Editable s) {
+	    		View v = getWindow().getDecorView();
+	    		switch(pct) {
+	    		  case 10: calculateTip10Pct(v); 
+	    		  case 15: calculateTip15Pct(v);
+	    		  case 20: calculateTip20Pct(v);
+	    	      default: break;
+	    		}
+	    		return;	
+	        }
+
+	        @Override
+	        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+	        }
+
+	        @Override
+	        public void onTextChanged(CharSequence s, int start, int before, int count) {
+	        }
+		});
 	}
 	
 	public void calculateTip10Pct(View v) {
@@ -69,11 +67,6 @@ public class MainActivity extends ActionBarActivity {
 	public double getBillAmount() {
 		etBillAmount = (EditText) findViewById(R.id.etAmount);
 		strBillAmount = etBillAmount.getText().toString();
-//		if(strBillAmount == null || strBillAmount == "") {
-//			Toast.makeText(getApplicationContext(), "Sorry, you didn't type an amount.", Toast.LENGTH_SHORT).show();
-//		} else {
-//			dblBillAmount = Double.parseDouble(strBillAmount);
-//		}
 		try {
 		  dblBillAmount = Double.parseDouble(strBillAmount);	
 		} catch(NumberFormatException e) {
